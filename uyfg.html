@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Errore di Prezzo Incredibile!</title>
   <style>
     body {
@@ -39,15 +40,15 @@
 
     .coverlayer {
       position: absolute;
-      width: 400px;
-      height: 225px;
-      background-color: rgba(0, 0, 0, 0.85);
+      width: 100%;
+      height: 100%;
+      background-color: white;
       display: flex;
       justify-content: center;
       align-items: center;
       cursor: pointer;
       z-index: 2;
-      border-radius: 12px;
+      background: linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)), url(background.png);
     }
 
     .coverlayer img {
@@ -60,10 +61,11 @@
     }
   </style>
 </head>
+
 <body>
   <div class="coverlayer" id="coverlayer">
     <!-- Usa un logo LG UltraGear qualsiasi o personalizza con un'immagine tua -->
-    <img src="ultragear.webp" alt="LG UltraGear" />
+    <img src="ultragear.png" alt="LG UltraGear" />
   </div>
   <h1>😱 Offerta lampo: LG UltraGear OLED a 68,00€ solo per oggi!</h1>
   <p>Solo oggi, solo ora… clicca per attivare lo sconto esclusivo!</p>
@@ -86,4 +88,5 @@
     });
   </script>
 </body>
+
 </html>
