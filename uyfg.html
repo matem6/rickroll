@@ -1,89 +1,94 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Errore di Prezzo Incredibile!</title>
+  <meta charset="UTF-8">
+  <title>Offerta Lampo - LG UltraGear</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      background-color: #000;
-      color: #fff;
+      padding: 0;
+    }
+    body, html {
+      height: 100%;
+      background: black;
       font-family: Arial, sans-serif;
-      text-align: center;
+      overflow: hidden;
     }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-top: 2rem;
+    .video-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
-
-    p {
-      margin-bottom: 2rem;
-    }
-
-    video {
-      width: 400px;
-      height: 225px;
-      border-radius: 12px;
-      z-index: 1;
-    }
-
-    .container {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 2rem;
-    }
-
-    .coverlayer {
+    .overlay {
       position: absolute;
-      width: 400px;
-      height: 225px;
-      background-color: rgba(0, 0, 0, 0.85);
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      background-color: rgba(0,0,0,0.85);
+      color: white;
+      text-align: center;
+      padding: 2rem;
       cursor: pointer;
-      z-index: 2;
-      border-radius: 12px;
     }
-
-    .coverlayer img {
-      max-width: 60%;
+    .overlay img {
+      max-width: 250px;
+      margin-bottom: 1.5rem;
     }
-
-    .footer {
-      margin-top: 2rem;
+    .overlay .fake-btn {
+      background: #e60012;
+      padding: 1rem 2rem;
       font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      margin-top: 1rem;
+    }
+    .footer {
+      position: absolute;
+      bottom: 1rem;
+      width: 100%;
+      text-align: center;
+      font-size: 1rem;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
-  <h1>😱 Offerta lampo: LG UltraGear OLED a 68,00€ solo per oggi!</h1>
-  <p>Solo oggi, solo ora… clicca per attivare lo sconto esclusivo!</p>
 
-  <div class="container">
-    <video id="rickroll" autoplay loop muted playsinline>
-      <source src="monitor-ultragear.mp4" type="video/mp4">
-      Il tuo browser non supporta il tag video.
-    </video>
-    <div class="coverlayer" id="coverlayer">
-      <!-- Usa un logo LG UltraGear qualsiasi o personalizza con un'immagine tua -->
-      <img src="ultragear-logo.png" alt="LG UltraGear" />
-    </div>
+  <video id="rickvid" class="video-bg" loop muted playsinline>
+    <source src="monitor-ultragear.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay" id="clicktrap">
+    <img src="ultragear.webp" alt="LG UltraGear">
+    <h1>😱 Offerta esclusiva: UltraGear 49” a 39,99€!</h1>
+    <p>Disponibile solo per i più veloci.</p>
+    <button class="fake-btn">Attiva l’offerta</button>
   </div>
 
   <div class="footer">Buon pesce d’aprile! 🐟</div>
 
   <script>
-    document.getElementById('coverlayer').addEventListener('click', () => {
-      const video = document.getElementById('rickroll');
+    const trap = document.getElementById('clicktrap');
+    const video = document.getElementById('rickvid');
+
+    // Avvia il video senza audio subito
+    video.play();
+
+    trap.addEventListener('click', () => {
       video.muted = false;
+      video.currentTime = 0;
       video.play();
-      document.getElementById('coverlayer').style.display = 'none';
-    });
+      trap.style.display = 'none';
+    }, { once: true });
   </script>
 </body>
 </html>
