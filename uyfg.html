@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Errore di Prezzo Incredibile!</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    video {
+      margin-top: 2rem;
+      width: 400px;
+      height: 225px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>😱 Offerta lampo: LG UltraGear OLED a 68,00€ solo per oggi!</h1>
+  <p>Affrettatevi prima che finisca... oppure no 😏</p>
+
+  <video id="rickroll" autoplay loop muted playsinline>
+    <source src="rickroll.mp4" type="video/mp4">
+    Il tuo browser non supporta il tag video.
+  </video>
+
+  <p style="margin-top: 2rem;">Buon pesce d’aprile! 🐟</p>
+</body>
+<script>
+    // Sblocca l'audio con il primo clic dell'utente
+    document.addEventListener('click', () => {
+      const video = document.getElementById('rickroll');
+      video.muted = false;
+      video.play();
+    }, { once: true });
+  </script>
+</html>
