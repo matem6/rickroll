@@ -37,7 +37,7 @@
       margin-top: 2rem;
     }
 
-    .overlay {
+    .coverlayer {
       position: absolute;
       width: 400px;
       height: 225px;
@@ -50,7 +50,7 @@
       border-radius: 12px;
     }
 
-    .overlay img {
+    .coverlayer img {
       max-width: 60%;
     }
 
@@ -66,10 +66,10 @@
 
   <div class="container">
     <video id="rickroll" autoplay loop muted playsinline>
-      <source src="rickroll.mp4" type="video/mp4">
+      <source src="monitor-ultragear.mp4" type="video/mp4">
       Il tuo browser non supporta il tag video.
     </video>
-    <div class="overlay" id="overlay">
+    <div class="coverlayer" id="coverlayer">
       <!-- Usa un logo LG UltraGear qualsiasi o personalizza con un'immagine tua -->
       <img src="ultragear-logo.png" alt="LG UltraGear" />
     </div>
@@ -78,11 +78,11 @@
   <div class="footer">Buon pesce d’aprile! 🐟</div>
 
   <script>
-    document.getElementById('overlay').addEventListener('click', () => {
+    document.getElementById('coverlayer').addEventListener('click', () => {
       const video = document.getElementById('rickroll');
       video.muted = false;
       video.play();
-      document.getElementById('overlay').style.display = 'none';
+      document.getElementById('coverlayer').style.display = 'none';
     });
   </script>
 </body>
